@@ -8,8 +8,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int answer = 0;
         double moneyOperation;
-        CreditCard card1 = new CreditCard(1,987654321, 123.45);
-        CreditCard card2 = new CreditCard();
+        CreditCard card1 = new CreditCard();
+        CreditCard card2 = new CreditCard(2,987654321, 123.45);
         CreditCard card3 = new CreditCard(3,102030405, 55.19);
 
         while (answer != 4) {

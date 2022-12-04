@@ -6,7 +6,7 @@ public class CreditCard {
     double currentAmount;
 
     CreditCard() {
-        id = 2;
+        id = 1;
         accountNumber = 123456789;
         currentAmount = 0.00;
     }
@@ -37,7 +37,7 @@ public class CreditCard {
     }
 
     public void printCurrentStatus() {
-        System.out.println("card - " + id + " accountNumber = '" + accountNumber + '\'' +
+        System.out.println("card - " + id + " -> accountNumber = '" + accountNumber + '\'' +
                 ", currentStatus = " + currentAmount);
     }
 }
