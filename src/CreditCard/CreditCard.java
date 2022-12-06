@@ -17,20 +17,18 @@ public class CreditCard {
         this.currentAmount = currentAmount;
     }
 
-    public void getMoney(double currentAmount, double moneyOperation) {
-        if (currentAmount <= moneyOperation) {
+    public void getMoney(double moneyOperation) {
+        if (this.currentAmount <= moneyOperation) {
             System.out.println("insufficient funds... check your current amount");
         } else {
-            currentAmount = currentAmount - moneyOperation;
-            this.currentAmount = currentAmount;
+            this.currentAmount = this.currentAmount - moneyOperation;
 
             System.out.println(currentAmount);
         }
     }
 
-    public void putMoney(double currentAmount, double moneyOperation) {
-        currentAmount = currentAmount + moneyOperation;
-        this.currentAmount = currentAmount;
+    public void putMoney(double moneyOperation) {
+        this.currentAmount = this.currentAmount + moneyOperation;
 
         System.out.println(currentAmount);
 

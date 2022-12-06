@@ -6,10 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int answer = 0;
-        double moneyOperation;
         CreditCard card1 = new CreditCard();
-        CreditCard card2 = new CreditCard(2,987654321, 123.45);
-        CreditCard card3 = new CreditCard(3,102030405, 55.19);
+        CreditCard card2 = new CreditCard(2, 987654321, 123.45);
+        CreditCard card3 = new CreditCard(3, 102030405, 55.19);
 
         while (answer != 4) {
             System.out.println("""
@@ -22,54 +21,10 @@ public class Main {
 
             switch (answer) {
                 case 1 -> {
-                    System.out.println("choose a card: \n1 - card 1\n2 - card 2\n3 - card 3");
-                    answer = input.nextInt();
-
-                    switch (answer) {
-                        case 1 -> {
-                            System.out.println("How much money do you wanna get?");
-                            moneyOperation = input.nextDouble();
-
-                            card1.getMoney(card1.currentAmount, moneyOperation);
-                        }
-                        case 2 -> {
-                            System.out.println("How much money do you wanna get?");
-                            moneyOperation = input.nextDouble();
-
-                            card2.getMoney(card2.currentAmount, moneyOperation);
-                        }
-                        case 3 -> {
-                            System.out.println("How much money do you wanna get?");
-                            moneyOperation = input.nextDouble();
-
-                            card3.getMoney(card3.currentAmount, moneyOperation);
-                        }
-                    }
+                    workWithGetMoney(card1, card2, card3);
                 }
                 case 2 -> {
-                    System.out.println("choose a card: \n1 - card 1\n2 - card 2\n3 - card 3");
-                    answer = input.nextInt();
-
-                    switch (answer) {
-                        case 1 -> {
-                            System.out.println("How much money do you wanna put?");
-                            moneyOperation = input.nextDouble();
-
-                            card1.putMoney(card1.currentAmount, moneyOperation);
-                        }
-                        case 2 -> {
-                            System.out.println("How much money do you wanna put?");
-                            moneyOperation = input.nextDouble();
-
-                            card2.putMoney(card2.currentAmount, moneyOperation);
-                        }
-                        case 3 -> {
-                            System.out.println("How much money do you wanna put?");
-                            moneyOperation = input.nextDouble();
-
-                            card3.putMoney(card3.currentAmount, moneyOperation);
-                        }
-                    }
+                    workWithAddMoney(card1, card2, card3);
                 }
                 case 3 -> {
                     card1.printCurrentStatus();
@@ -79,6 +34,67 @@ public class Main {
                 case 4 -> System.out.println("see you :)");
             }
             System.out.println();
+        }
+    }
+
+    public static void workWithGetMoney(CreditCard card1, CreditCard card2, CreditCard card3) {
+        Scanner input = new Scanner(System.in);
+        double moneyOperation;
+        int answer;
+
+        System.out.println("choose a card: \n1 - card 1\n2 - card 2\n3 - card 3");
+        answer = input.nextInt();
+
+        switch (answer) {
+            case 1 -> {
+                System.out.println("How much money do you wanna get?");
+                moneyOperation = input.nextDouble();
+
+                card1.getMoney(moneyOperation);
+            }
+            case 2 -> {
+                System.out.println("How much money do you wanna get?");
+                moneyOperation = input.nextDouble();
+
+                card2.getMoney(moneyOperation);
+            }
+            case 3 -> {
+                System.out.println("How much money do you wanna get?");
+                moneyOperation = input.nextDouble();
+
+                card3.getMoney(moneyOperation);
+            }
+        }
+
+    }
+
+    public static void workWithAddMoney(CreditCard card1, CreditCard card2, CreditCard card3) {
+        int answer;
+        double moneyOperation;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("choose a card: \n1 - card 1\n2 - card 2\n3 - card 3");
+        answer = input.nextInt();
+
+        switch (answer) {
+            case 1 -> {
+                System.out.println("How much money do you wanna put?");
+                moneyOperation = input.nextDouble();
+
+                card1.putMoney(moneyOperation);
+            }
+            case 2 -> {
+                System.out.println("How much money do you wanna put?");
+                moneyOperation = input.nextDouble();
+
+                card2.putMoney(moneyOperation);
+            }
+            case 3 -> {
+                System.out.println("How much money do you wanna put?");
+                moneyOperation = input.nextDouble();
+
+                card3.putMoney(moneyOperation);
+            }
         }
     }
 }
