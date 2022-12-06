@@ -9,6 +9,8 @@ public class Computer {
     Computer(int cost, String model) {
         this.cost = cost;
         this.model = model;
+        this.ram =  new RAM();
+        this.hdd = new HDD();
     }
 
     Computer(int cost, String model, RAM ram, HDD hdd) {

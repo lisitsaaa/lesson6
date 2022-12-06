@@ -5,6 +5,8 @@ public class RAM {
     int size;
 
     RAM(){
+        this.name = "DDR2";
+        this.size = 8;
 
     }
 

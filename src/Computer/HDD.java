@@ -6,6 +6,9 @@ public class HDD {
     String type;
 
     HDD(){
+        this.name = "Seagate";
+        this.size = 500;
+        this.type = "external";
 
     }
 
