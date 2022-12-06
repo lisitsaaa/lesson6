@@ -6,9 +6,9 @@ public class CreditCard {
     double currentAmount;
 
     CreditCard() {
-        id = 1;
-        accountNumber = 123456789;
-        currentAmount = 0.00;
+        this.id = 1;
+        this.accountNumber = 123456789;
+        this.currentAmount = 0.00;
     }
 
     CreditCard(int id, int accountNumber, double currentAmount) {
@@ -21,14 +21,14 @@ public class CreditCard {
         if (this.currentAmount <= moneyOperation) {
             System.out.println("insufficient funds... check your current amount");
         } else {
-            this.currentAmount = this.currentAmount - moneyOperation;
+            this.currentAmount -= moneyOperation;
 
             System.out.println(currentAmount);
         }
     }
 
     public void putMoney(double moneyOperation) {
-        this.currentAmount = this.currentAmount + moneyOperation;
+        this.currentAmount += moneyOperation;
 
         System.out.println(currentAmount);
 
