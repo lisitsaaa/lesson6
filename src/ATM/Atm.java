@@ -32,7 +32,6 @@ public class Atm {
         }
 
         boolean status = false;
-        int tmpSum = amount;
 
         while (!status) {
             if (((amount - 100) % 20) == 0 && ((amount - 100) % 50) == 0) {
@@ -72,6 +71,7 @@ public class Atm {
             this.banknotes50 -= col50;
             this.banknotes100 -= col100;
         }
+        sum -= amount;
 
         System.out.println(status);
         return status;
